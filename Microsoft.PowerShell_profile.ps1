@@ -1,24 +1,38 @@
 # Git CLone Functions
-
 function ghc {
     param (
-        [string]$repo
+        [string]$repo,
+        [string]$folder = $null
     )
-    git clone "https://github.com/$repo.git"
+    if ($folder) {
+        git clone "https://github.com/$repo.git" $folder
+    } else {
+        git clone "https://github.com/$repo.git"
+    }
 }
 
 function ggc {
     param (
-        [string]$repo
+        [string]$repo,
+        [string]$folder = $null
     )
-    git clone "https://git.gay/$repo.git"
+    if ($folder) {
+        git clone "https://git.gay/$repo.git" $folder
+    } else {
+        git clone "https://git.gay/$repo.git"
+    }
 }
 
 function glc {
     param (
-        [string]$repo
+        [string]$repo,
+        [string]$folder = $null
     )
-    git clone "https://gitlab.com/$repo.git"
+    if ($folder) {
+        git clone "https://gitlab.com/$repo.git" $folder
+    } else {
+        git clone "https://gitlab.com/$repo.git"
+    }
 }
 
 function md5    { Get-FileHash -Algorithm MD5 $args }
